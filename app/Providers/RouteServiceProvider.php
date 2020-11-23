@@ -45,6 +45,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+        $this->mariamRoutes();
+        $this->tengizRoutes();
+        $this->sandroRoutes();
+        $this->valeriRoutes();
 
         //
     }
@@ -76,5 +80,25 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/api.php'));
+    }
+    protected function mariamRoutes()
+    {
+        Route::namespace($this->namespace)
+            ->group(base_path('routes/mariami.php'));
+    }
+    protected function tengizRoutes()
+    {
+        Route::namespace($this->namespace)
+            ->group(base_path('routes/tengiz.php'));
+    }
+    protected function sandroRoutes()
+    {
+        Route::namespace($this->namespace)
+            ->group(base_path('routes/sandro.php'));
+    }
+    protected function valeriRoutes()
+    {
+        Route::namespace($this->namespace)
+            ->group(base_path('routes/valeri.php'));
     }
 }
