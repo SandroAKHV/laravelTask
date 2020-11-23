@@ -17,3 +17,5 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin/create','crudController@create')->name('admincreate');
+Route::post('/admin/store','crudController@store')->name('adminstore');
