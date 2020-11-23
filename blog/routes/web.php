@@ -14,25 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 use Illuminate\Http\Request;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', function () {
-    return view('guest.form');
+    return view('welcome');
 });
-Route::get('/gettest', function () {
-    return view('guest.form');
-});
-Route::post('/test', function (Request $req) {
-    $data = [
-        [
-            "name" => $req->post()["name"],
-            "lastname" => $req->post()["lastname"],
-            "email" => $req->post()["email"],
-            "biography" => $req->post()["biography"],
-            "date" => $req->post()["date"]
-        ],
-
-    ];
-    return view('guest.table', ["newdata" => $data]);
-})->name("testpost");
