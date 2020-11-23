@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use Illuminate\Http\Request;
-
+Route::get('/admin/create','crudController@create')->name('admincreate');
+Route::post('/admin/store','crudController@store')->name('adminstore');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/create','crudController@create')->name('admincreate');
-Route::post('/admin/store','crudController@store')->name('adminstore');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
